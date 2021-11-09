@@ -8,7 +8,15 @@ app.use(express.static("public"));
 
 const PORT = process.env.PORT || 3001;
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/fit-track-database"
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
 
 app.listen(PORT, () => {
     console.log(`Now listening on port ${PORT}`);
