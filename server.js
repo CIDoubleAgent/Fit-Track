@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const apiRoutes = require("./routes/apiRoutes");
 
 const PORT = process.env.PORT || 3001;
 
@@ -10,6 +11,8 @@ app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.use(apiRoutes);
 
 connectToDb().catch(err => console.log(err));
 

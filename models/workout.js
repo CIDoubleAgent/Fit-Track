@@ -8,10 +8,10 @@ WorkoutSchema = new Schema({
     },
     excercises: [
         {
-            type: {
+            name: {
                 type: String
             },
-            name: {
+            type: {
                 type: String
             },
             weight: {
