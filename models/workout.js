@@ -25,9 +25,6 @@ const workoutSchema = new Schema({
             },
             distance: {
                 type: Number,
-            },
-            duration: {
-                type: Number
             }
         }
     ], 
