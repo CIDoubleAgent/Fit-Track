@@ -9,3 +9,5 @@ router.get("/stats", (req, res) => {
 router.get("/exercise", (req, res) => {
     res.sendFile(path.resolve() + path.join("/../public/exercise.html"))
 })
+
+module.exports = router;
