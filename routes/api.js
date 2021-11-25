@@ -49,4 +49,14 @@ router.get("/workouts/range", async (req, res) => {
         }
 });
 
+router.post("/workouts", ({ body }, res) => {
+    Workout.create(body)
+      .then(newWorkout => {
+        res.json(newWorkout);
+      })
+      .catch(err => {
+        res.status(400).json(err);
+      });
+  });
+
 module.exports = router;
